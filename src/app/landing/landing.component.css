@@ -1,0 +1,56 @@
+.table1 {
+    border: 1px solid gray;
+    background-color: cornsilk;
+}
+
+.footer {
+    border: 1px solid gray;
+    background-color: #f8f9fa;
+}
+
+.text-gray {
+    font-size: small;
+}
+
+.text-black {
+    font-size: small;
+}
+
+.icon {
+    color: darkorange;
+}
+
+.fa-circle-plus {
+    font-size: 50px;
+}
+
+.icons {
+    color: darkorange;
+    margin-left: 1310px;
+    margin-top: -130px;
+    position: absolute;
+}
+.icons1 {
+    color: darkorange;
+    font-size: 50px;
+    margin-left: 1310px;
+    margin-top: -80px;
+    position: relative;
+}
+/* @media(min-width:321px) and (max-width:768px) {
+    .icons {
+        color: darkorange;
+        margin-left: 700px;
+        margin-top: -130px;
+        position: absolute;
+    }
+    .icons1 {
+        color: darkorange;
+        font-size: 50px;
+        margin-left: 700px;
+        margin-top: -80px;
+        position: relative;
+    }
+} */
+
+

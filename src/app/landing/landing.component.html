@@ -1,0 +1,185 @@
+<div>
+    <!-- <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Add Data</button> -->
+    <div class="row py-4">
+        <div class="col-lg-7 col-md-3 col-sm-2 fs-5">
+            <a href=""><i class="icon bi bi-arrow-down-up px-3"></i></a>
+
+        </div>
+        <div class="col-lg-5 col-md-9 col-sm-10 fs-5">
+            <a href="#"><i class="icon bi bi-megaphone-fill px-3"></i></a>
+            <a href="#"><i class="icon fa-solid fa-user px-3"></i></a>
+            <a href="#"><i class="icon fa-brands fa-whatsapp-square px-3"></i></a>
+            <a href="#"><i class=" icon fa-solid fa-message px-3"></i></a>
+            <a href="#"><i class="icon fa-solid fa-envelope px-3"></i></a>
+            <a href="#"><i class="icon fa-solid fa-repeat px-3"></i></a>
+            <a href="#"><i class="icon fa-solid fa-download px-3"></i></a>
+            <a href="#"><i class="icon fa-solid fa-bars px-3"></i></a>
+            <a href="#"><i class="icon fa-solid fa-filter px-3 justify-content-end"></i></a>
+        </div>
+    </div>
+
+    <div class="rounded table1">
+        <div class="container p-4 pb-0">
+            <div class="row">
+                <div class="col-md-3 col-lg-3 col-xl-3">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <h6 class="text-black">Ramesh Dudejha</h6>
+                        <p><a><i class="fa-solid fa-bahai"></i></a>9998881113</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-lg-6 col-xl-6">
+                    <select class=" ">
+                        <option *ngFor="let sk of names">{{ sk }}</option>
+                    </select>
+                    <a href="#"><i class="icon fa-solid fa-phone mx-3"></i></a>
+                    <a href="#"><i class="icon fa-regular fa-message mx-3"></i></a>
+                    <a href="#"><i class="icon fa-regular fa-envelope mx-3"></i></a>
+                    <a href="#"><i class="icon fa-solid fa-message mx-3"></i></a>
+                </div>
+                <div class="col-md-3 col-lg-3 col-xl-3">
+                    <a href="#"><i class="icon fa-brands fa-whatsapp-square mx-2"></i></a>
+                    <a href="#"><i class="icon fa-solid fa-envelope-circle-check mx-2"></i></a>
+                    <a href="#"><i class="icon fa-solid fa-phone mx-2"></i></a>
+                    <a href="#"><i class="icon fa-solid fa-video mx-2"></i></a>
+                    <a href="#"><i class="icon fa-solid fa-message mx-2"></i></a>
+                    <a href="#"><i class="icon fa-solid fa-ellipsis-vertical mx-2"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <table class="table mt-2">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>EmpId</th>
+                    <th>Branch</th>
+                    <th>Role</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let dt of userData">
+                    <td>{{dt.id}}</td>
+                    <td>{{dt.name}}</td>
+                    <td>{{dt.age}}</td>
+                    <td>{{dt.empId}}</td>
+                    <td>{{dt.branch}}</td>
+                    <td>{{dt.role}}</td>
+                    <td><button class=" btn btn-info" (click)="onEdit(dt)" type="button">Edit</button></td>
+                    <td><button class="btn btn-warning" (click)="onDelete(dt)" type="button">Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <form [formGroup]="myForm">
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Name:<span
+                                    style="color: red;">*</span></label>
+                            <input type="text" formControlName="name" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp" required
+                                [ngClass]="{'is-invalid': isSubmitted && f.name.errors}" placeholder="Name">
+                            <div *ngIf="isSubmitted && f.name.errors?.required" class="invalid-feedback">Name is
+                                required</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Age</label>
+                            <input type="number" formControlName="age" class="form-control" id="exampleInputPassword1">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">EmpID</label>
+                            <input type="text" formControlName="empId" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Branch</label>
+                            <input type="text" formControlName="branch" class="form-control" id="exampleInputPassword1">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Role</label>
+                            <input type="text" formControlName="role" class="form-control" id="exampleInputPassword1">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Close</button>
+                    <button class="btn btn-primary" (click)="onSubmit()">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <button class="btn btn-success" mat-button (click)="openDialog()">Edit Data</button> -->
+
+    <section class="mt-2 ">
+        <div class="container p-4 pb-0 footer rounded">
+            <div class="row">
+                <div class="col-md-4 col-lg-3 col-xl-3">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <h6 class="text-black">Testsmita</h6>
+                        <p><a><i class="fa-solid fa-bahai"></i></a> 2458494672</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-6 col-xl-6">
+                    <select class=" ">
+                        <option *ngFor="let sk of names">{{ sk }}</option>
+                    </select>
+                    <a href="#"><i class=" icon fa-solid fa-phone mx-3"></i></a>
+                    <a href="#"><i class=" icon fa-regular fa-message mx-3"></i></a>
+                    <a href="#"><i class=" icon fa-regular fa-envelope mx-3"></i></a>
+                    <a href="#"><i class=" icon fa-solid fa-message mx-3"></i></a>
+
+                </div>
+                <div class="col-md-4 col-lg-3 col-xl-3">
+                    <a href="#"><i class=" icon fa-brands fa-whatsapp-square mx-2"></i></a>
+                    <a href="#"><i class=" icon fa-solid fa-envelope-circle-check mx-2"></i></a>
+                    <a href="#"><i class=" icon fa-solid fa-phone mx-2"></i></a>
+                    <a href="#"><i class=" icon fa-solid fa-video mx-2"></i></a>
+                    <a href="#"><i class=" icon fa-solid fa-message mx-2"></i></a>
+                    <a href="#"><i class=" icon fa-solid fa-ellipsis-vertical mx-2"></i></a>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto">
+                    <p>CONVERTIBILITY</p>
+                    <h6 class="text-black">Hot</h6>
+                </div>
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto">
+                    <p>ENQUIRY SOURCE</p>
+                    <h6 class="text-black">Not Known</h6>
+                </div>
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto">
+                    <p>ENQUIRY TYPE</p>
+                    <h6 class="text-black">Telephonic Quick Add</h6>
+                </div>
+                <div class="col-md-3 col-lg text-left-3 col-xl-3 mx-auto">
+                    <p>RESPONCE</p>
+                    <h6 class="text-black">Not Called, Full Fees</h6>
+                </div>
+            </div>
+        </div>
+        <div class="icons">
+            <a class="icon mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal" href="">
+                <i class="fa-solid fa-circle-plus"></i></a>
+        </div>
+        <div class="icons1 pt-2">
+            <a class="icon mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal" href="">
+                <i class="fa-solid fa-circle-arrow-up"></i></a>
+        </div>
+    </section>
+</div>

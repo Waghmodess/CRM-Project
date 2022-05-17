@@ -1,185 +1,269 @@
-<div>
-    <!-- <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        Add Data</button> -->
-    <div class="row py-4">
-        <div class="col-lg-7 col-md-3 col-sm-2 fs-5">
-            <a href=""><i class="icon bi bi-arrow-down-up px-3"></i></a>
-
+<div class="row">
+    <div class="col-lg-11 col-md-11 col-sm-10">
+        <div class="row py-4">
+            <div class="col-lg-7 col-md-5 col-sm-2 fs-5">
+                <a href=""><i class="icon bi bi-arrow-down-up"></i></a>
+            </div>
+            <div class="col-lg-5 col-md-7 col-sm-10 fs-5">
+                <a href="#"><i class="icon bi bi-megaphone-fill"></i></a>
+                <a href="#"><i class="icon fa-solid fa-user"></i></a>
+                <a href="#"><i class="icon fa-brands fa-whatsapp-square"></i></a>
+                <a href="#"><i class="icon fa-solid fa-message"></i></a>
+                <a href="#"><i class="icon fa-solid fa-envelope"></i></a>
+                <a href="#"><i class="icon fa-solid fa-repeat"></i></a>
+                <a href="#"><i class="icon fa-solid fa-download"></i></a>
+                <a href="#"><i class="icon fa-solid fa-bars"></i></a>
+                <a href="#"><i class="icon fa-solid fa-filter justify-content-end"></i></a>
+            </div>
         </div>
-        <div class="col-lg-5 col-md-9 col-sm-10 fs-5">
-            <a href="#"><i class="icon bi bi-megaphone-fill px-3"></i></a>
-            <a href="#"><i class="icon fa-solid fa-user px-3"></i></a>
-            <a href="#"><i class="icon fa-brands fa-whatsapp-square px-3"></i></a>
-            <a href="#"><i class=" icon fa-solid fa-message px-3"></i></a>
-            <a href="#"><i class="icon fa-solid fa-envelope px-3"></i></a>
-            <a href="#"><i class="icon fa-solid fa-repeat px-3"></i></a>
-            <a href="#"><i class="icon fa-solid fa-download px-3"></i></a>
-            <a href="#"><i class="icon fa-solid fa-bars px-3"></i></a>
-            <a href="#"><i class="icon fa-solid fa-filter px-3 justify-content-end"></i></a>
-        </div>
-    </div>
 
-    <div class="rounded table1">
-        <div class="container p-4 pb-0">
-            <div class="row">
-                <div class="col-md-3 col-lg-3 col-xl-3">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <h6 class="text-black">Ramesh Dudejha</h6>
-                        <p><a><i class="fa-solid fa-bahai"></i></a>9998881113</p>
+        <div class="card">
+            <div class="rounded table1">
+                <div class=" " id="accordionExample">
+                    <div class="accordion-item">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <div class="container p-4 pb-0">
+                                <div class="row">
+                                    <div class="col-md-3 col-lg-3 col-xl-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value=""
+                                                id="flexCheckDefault">
+                                            <h6 class="text-black">Ramesh Dudejha</h6>
+                                            <p class="text"><a><i class="fa-solid fa-bahai"></i></a>9998881113</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-6 col-xl-6">
+                                        <select class="names">
+                                            <option *ngFor="let sk of names">{{ sk }}</option>
+                                        </select>
+                                        <a href="#"><i class="icon1 fa-solid fa-phone"></i></a><span
+                                            class="mx-1">0</span>
+                                        <a href="#"><i class="icon1 fa-regular fa-message"></i></a><span
+                                            class="mx-1">1</span>
+                                        <a href="#"><i class="icon1 fa-regular fa-envelope"></i></a><span
+                                            class="mx-1">4</span>
+                                        <a href="#"><i class="icon1 fa-solid fa-message"></i></a><span
+                                            class="mx-1">2</span>
+                                        <mat-icon class="icon1" matBadge="15" matBadgeColor="warn">home</mat-icon>
+                                    </div>
+                                    <div class="col-md-3 col-lg-3 col-xl-3">
+                                        <a href="#"><i class="icon1 fa-brands fa-whatsapp-square"></i></a>
+                                        <a href="#"><i class="icon1 fa-solid fa-envelope-circle-check"></i></a>
+                                        <a href="#"><i class="icon1 fa-solid fa-phone"></i></a>
+                                        <a href="#"><i class="icon1 fa-solid fa-video"></i></a>
+                                        <a href="#"><i class="icon1 fa-solid fa-message"></i></a>
+                                        <a href="#"><i class="icon1 fa-solid fa-ellipsis-vertical"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </button>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body font">
+                                <div class="font">
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-3">
+                                            <p class="para">CONVERTIBILITY</p>
+                                            <h4>test</h4>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3">
+                                            <p class="para">ENQUIRY SOURCE</p>
+                                            <h4>googleads</h4>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3">
+                                            <p class="para">ENQUIRY TYPE</p>
+                                            <h4>Online Leads</h4>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3">
+                                            <p class="para">RESPONCE</p>
+                                            <h4>Call back-later- inter</h4>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-3">
+                                            <p class="para">CAMPAIGN NAME</p>
+                                            <h4>API Lead</h4>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3">
+                                            <p class="para">CENTER</p>
+                                            <h4>Pune</h4>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3">
+                                            <p class="para">COURSE</p>
+                                            <h4>course1</h4>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3">
+                                            <p class="para">BATCH TYPE</p>
+                                            <h4>regular batch</h4>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-3">
+                                            <p class="para">LANGUAGE</p>
+                                            <h4>English</h4>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3">
+                                            <p class="para">LEAD CREATION DATE</p>
+                                            <h4>Jun 9, 2021 3.51 PM</h4>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3">
+                                            <p class="para">LEAD MODIFICATION DATE</p>
+                                            <h4>Aug 6, 2021 5.39 PM</h4>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3">
+                                            <P class="para">NEXT ACTION DATE</P>
+                                            <h4>Aug 10, 2021 12.00 AM</h4>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-3">
+                                            <p class="para">LAST RE-ENQURED</p>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3">
+                                            <p class="para">PREVIOUS LEAD OWNER</p>
+                                            <h4>Extraa Edge Admin</h4>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3">
+                                            <p class="para">ASSIGNED TO</p>
+                                            <h4>Extraa Edge Admin</h4>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3">
+                                            <p class="para">FOLLOWUP COMMENT</p>
+                                            <h4>Followup date change</h4>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-3">
+                                            <p class="para">LAST RE-ENQURED</p>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <p class="para">CLOSURE COMMIENT</p>
+                                        </div>
+                                        <div class="col-lg-3">
+
+                                        </div>
+                                        <div class="col-lg-3">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-3 col-lg-6 col-xl-6">
-                    <select class=" ">
-                        <option *ngFor="let sk of names">{{ sk }}</option>
-                    </select>
-                    <a href="#"><i class="icon fa-solid fa-phone mx-3"></i></a>
-                    <a href="#"><i class="icon fa-regular fa-message mx-3"></i></a>
-                    <a href="#"><i class="icon fa-regular fa-envelope mx-3"></i></a>
-                    <a href="#"><i class="icon fa-solid fa-message mx-3"></i></a>
-                </div>
-                <div class="col-md-3 col-lg-3 col-xl-3">
-                    <a href="#"><i class="icon fa-brands fa-whatsapp-square mx-2"></i></a>
-                    <a href="#"><i class="icon fa-solid fa-envelope-circle-check mx-2"></i></a>
-                    <a href="#"><i class="icon fa-solid fa-phone mx-2"></i></a>
-                    <a href="#"><i class="icon fa-solid fa-video mx-2"></i></a>
-                    <a href="#"><i class="icon fa-solid fa-message mx-2"></i></a>
-                    <a href="#"><i class="icon fa-solid fa-ellipsis-vertical mx-2"></i></a>
-                </div>
             </div>
         </div>
 
-        <table class="table mt-2">
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Name</th>
-                    <th>Age</th>
-                    <th>EmpId</th>
-                    <th>Branch</th>
-                    <th>Role</th>
-                    <th scope="col">Edit</th>
-                    <th scope="col">Delete</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let dt of userData">
-                    <td>{{dt.id}}</td>
-                    <td>{{dt.name}}</td>
-                    <td>{{dt.age}}</td>
-                    <td>{{dt.empId}}</td>
-                    <td>{{dt.branch}}</td>
-                    <td>{{dt.role}}</td>
-                    <td><button class=" btn btn-info" (click)="onEdit(dt)" type="button">Edit</button></td>
-                    <td><button class="btn btn-warning" (click)="onDelete(dt)" type="button">Delete</button></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <form [formGroup]="myForm">
-                        <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Name:<span
-                                    style="color: red;">*</span></label>
-                            <input type="text" formControlName="name" class="form-control" id="exampleInputEmail1"
-                                aria-describedby="emailHelp" required
-                                [ngClass]="{'is-invalid': isSubmitted && f.name.errors}" placeholder="Name">
-                            <div *ngIf="isSubmitted && f.name.errors?.required" class="invalid-feedback">Name is
-                                required</div>
+        <div class="card mt-3">
+            <div class="accordion-item">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    <div class="container p-4 pb-0">
+                        <div class="row">
+                            <div class="col-md-3 col-lg-3 col-xl-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <h6 class="text-black">TestSmita</h6>
+                                    <p class="text"><a><i class="fa-solid fa-bahai"></i></a>2458494672</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6 col-xl-6">
+                                <select class="names">
+                                    <option *ngFor="let sk of names">{{ sk }}</option>
+                                </select>
+                                <a href="#"><i class="icon1 fa-solid fa-phone"></i></a><span class="mx-1">0</span>
+                                <a href="#"><i class="icon1 fa-regular fa-message"></i></a><span class="mx-1">1</span>
+                                <a href="#"><i class="icon1 fa-regular fa-envelope"></i></a><span class="mx-1">6</span>
+                                <a href="#"><i class="icon1 fa-solid fa-message"></i></a><span class="mx-1">0</span>
+                                <mat-icon class="icon1" matBadge="15" matBadgeColor="warn">home</mat-icon>
+                                <!-- <mat-icon class="icon1" matBadge="15" matBadgeColor="warn">user</mat-icon>
+                                        <mat-icon class="icon1" matBadge="15" matBadgeColor="warn">person</mat-icon> -->
+                            </div>
+                            <div class="col-md-3 col-lg-3 col-xl-3">
+                                <a href="#"><i class="icon1 fa-brands fa-whatsapp-square"></i></a>
+                                <a href="#"><i class="icon1 fa-solid fa-envelope-circle-check"></i></a>
+                                <a href="#"><i class="icon1 fa-solid fa-phone"></i></a>
+                                <a href="#"><i class="icon1 fa-solid fa-video"></i></a>
+                                <a href="#"><i class="icon1 fa-solid fa-message"></i></a>
+                                <a href="#"><i class="icon1 fa-solid fa-ellipsis-vertical"></i></a>
+                            </div>
                         </div>
-
-                        <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Age</label>
-                            <input type="number" formControlName="age" class="form-control" id="exampleInputPassword1">
+                    </div>
+                </button>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body font">
+                        <div class="row">
+                            <div class="col-md-3 col-lg-3 col-xl-3 mx-auto">
+                                <p class="text">CONVERTIBILITY</p>
+                                <h6 class="text-black">Hot</h6>
+                            </div>
+                            <div class="col-md-3 col-lg-3 col-xl-3 mx-auto">
+                                <p class="text">ENQUIRY SOURCE</p>
+                                <h6 class="text-black">Not Known</h6>
+                            </div>
+                            <div class="col-md-3 col-lg-3 col-xl-3 mx-auto">
+                                <p class="text">ENQUIRY TYPE</p>
+                                <h6 class="text-black">Telephonic Quick Add</h6>
+                            </div>
+                            <div class="col-md-3 col-lg-3 col-xl-3 mx-auto">
+                                <p class="text">RESPONCE</p>
+                                <h6 class="text-black">Not Called, Full Fees</h6>
+                            </div>
                         </div>
-
-                        <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">EmpID</label>
-                            <input type="text" formControlName="empId" class="form-control" id="exampleInputEmail1"
-                                aria-describedby="emailHelp">
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Branch</label>
-                            <input type="text" formControlName="branch" class="form-control" id="exampleInputPassword1">
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Role</label>
-                            <input type="text" formControlName="role" class="form-control" id="exampleInputPassword1">
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Close</button>
-                    <button class="btn btn-primary" (click)="onSubmit()">Submit</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- <button class="btn btn-success" mat-button (click)="openDialog()">Edit Data</button> -->
-
-    <section class="mt-2 ">
-        <div class="container p-4 pb-0 footer rounded">
-            <div class="row">
-                <div class="col-md-4 col-lg-3 col-xl-3">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <h6 class="text-black">Testsmita</h6>
-                        <p><a><i class="fa-solid fa-bahai"></i></a> 2458494672</p>
                     </div>
                 </div>
-                <div class="col-md-4 col-lg-6 col-xl-6">
-                    <select class=" ">
-                        <option *ngFor="let sk of names">{{ sk }}</option>
-                    </select>
-                    <a href="#"><i class=" icon fa-solid fa-phone mx-3"></i></a>
-                    <a href="#"><i class=" icon fa-regular fa-message mx-3"></i></a>
-                    <a href="#"><i class=" icon fa-regular fa-envelope mx-3"></i></a>
-                    <a href="#"><i class=" icon fa-solid fa-message mx-3"></i></a>
-
-                </div>
-                <div class="col-md-4 col-lg-3 col-xl-3">
-                    <a href="#"><i class=" icon fa-brands fa-whatsapp-square mx-2"></i></a>
-                    <a href="#"><i class=" icon fa-solid fa-envelope-circle-check mx-2"></i></a>
-                    <a href="#"><i class=" icon fa-solid fa-phone mx-2"></i></a>
-                    <a href="#"><i class=" icon fa-solid fa-video mx-2"></i></a>
-                    <a href="#"><i class=" icon fa-solid fa-message mx-2"></i></a>
-                    <a href="#"><i class=" icon fa-solid fa-ellipsis-vertical mx-2"></i></a>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto">
-                    <p>CONVERTIBILITY</p>
-                    <h6 class="text-black">Hot</h6>
-                </div>
-                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto">
-                    <p>ENQUIRY SOURCE</p>
-                    <h6 class="text-black">Not Known</h6>
-                </div>
-                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto">
-                    <p>ENQUIRY TYPE</p>
-                    <h6 class="text-black">Telephonic Quick Add</h6>
-                </div>
-                <div class="col-md-3 col-lg text-left-3 col-xl-3 mx-auto">
-                    <p>RESPONCE</p>
-                    <h6 class="text-black">Not Called, Full Fees</h6>
-                </div>
             </div>
         </div>
-        <div class="icons">
-            <a class="icon mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal" href="">
-                <i class="fa-solid fa-circle-plus"></i></a>
+    </div>
+    <div class="col-lg-1 col-md-1 col-sm-2 side-button">
+        <!-- <div class="">
+            <a class=" mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <i class="fa-solid fa-circle-plus icons"></i></a>
+        </div> -->
+
+        <div class="">
+            <a class=" mt-3" (click)="openDialog1()">
+                <i class="fa-solid fa-circle-plus icons"></i></a>
         </div>
-        <div class="icons1 pt-2">
-            <a class="icon mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal" href="">
-                <i class="fa-solid fa-circle-arrow-up"></i></a>
+        <div class=" pt-2">
+            <a class=" mt-3" href="">
+                <i class="fa-solid fa-circle-arrow-up icons1"></i></a>
         </div>
-    </section>
+    </div>
+</div>
+
+
+    <!-- <app-online (submit)="submit($event)"></app-online> -->
+
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Mobile</th>
+                <th>Enquiry Type</th>
+                <th>Enquiry Source</th>
+                <th>Center</th>
+                <th>Course</th>
+                <th>Remarks</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let dt of userlist">
+                <td>{{ dt.firstName}}</td>
+                <td>{{ dt.lastName}}</td>
+                <td>{{ dt.email }}</td>
+                <td>{{ dt.mobile }}</td>
+                <td>{{ dt.enquirytype}}</td>
+                <td>{{ dt.enquirysource}}</td>
+                <td>{{ dt.center }}</td>
+                <td>{{ dt.course }}</td>
+                <td>{{ dt.remark }}</td>
+            </tr>
+        </tbody>
+    </table>
 </div>

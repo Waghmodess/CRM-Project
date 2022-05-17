@@ -1,9 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { DataService } from '../data.service';
 import { EditComponent } from '../edit/edit.component'
+import 'sweetalert2/src/sweetalert2.scss'
+import Swal from 'sweetalert2'
+import { OnlineComponent } from '../online/online.component';
+import Landing from '../data';
 
 @Component({
   selector: 'app-landing',
@@ -11,106 +15,209 @@ import { EditComponent } from '../edit/edit.component'
   styleUrls: ['./landing.component.css']
 })
 export class LandingComponent implements OnInit {
-  public userData: any;
-  public myForm: any;
+  userData: any;
+  myForm: FormGroup;
   public delete: any;
+  public modalForm = true;
   names: any = ['Enrolled', 'Not Called', 'ABC', 'XYZ'];
   isSubmitted: boolean = false;
+  allData: any;
+  userlist: any[];
 
 
-  constructor(private ser: DataService, private rout: Router, private fb: FormBuilder, public dialog: MatDialog) {
+
+
+  constructor(private ser: DataService, private rout: Router,
+    private fb: FormBuilder, public dialog: MatDialog) {
     // this.ser.getData().subscribe((res) => {
     //   console.log(res)
     //   this.userData = res;
     // })
-    this.deleteData()
+
+    // this.deleteData()
+  }
+
+  openDialog1() {
+    this.dialog.open(DialogContentExampleDialog);
   }
 
   openDialog() {
     this.dialog.open(EditComponent, { width: '500px' });
   }
 
-
-  ngOnInit(): void {
+  ngOnInit() {
     this.myForm = this.fb.group({
-      name: ['', [Validators.required]],
-      age: [''],
-      empId: [''],
-      branch: [''],
-      role: [''],
+      firstName: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.email]],
+      enquirytype: ['', [Validators.required]],
+      center: ['', [Validators.required]],
+      lastName: ['', [Validators.required]],
+      mobile: ['', [Validators.required, Validators.maxLength(10)]],
+      enquirysource: ['', [Validators.required]],
+      course: ['', [Validators.required]],
+      remark: ['', [Validators.required]],
     })
   }
 
-  onEdit(data: any) {
-    // debugger
-    const dialogRef = this.dialog.open(EditComponent,
-      { width: '500px', data: { data: data } });
-    dialogRef.afterClosed().subscribe(result => {
-      debugger;
-      // this.userData = this.userData.filter((value:any)=>{
-      //   if(value.id == result.id){
-      //     value.name = result.name;
-      //     value.age = result.age;
-      //     value.empId = result.empId;
-      //     value.branch = result.branch;
-      //     value.role = result.role;
-      //   }
-      //   return true;
-      // });
-      // let index = this.userData.indexOf(result);
+  // submit(userlist: any) {
+  //   this.userlist
+  // }
 
-      // for(let i=0; i< this.userData.length;i++){
-      //   this.userData[i].id === result.id;
-      //   this.userData[index] = result
-      // }
+  // onEdit(data: any) {
+  //   const dialogRef = this.dialog.open(EditComponent,
+  //     { width: '500px', data: { data: data } });
+  //   dialogRef.afterClosed().subscribe(result => {
+  //     this.ser.getData().subscribe((res) => {
+  //       console.log(res);
+  //       this.userData = res;
 
-      // const userIndex = this.userData.findIndex((x:any) => x.empId = result.empId);
-      // this.userData[userIndex]=result;
-      //  if (userIndex != null && userIndex != undefined) { this.userData [userIndex] = result; }
+  //     });
 
-      this.ser.getData().subscribe((res) => {
-        console.log(res);
-        this.userData = res;
+  //     console.log('The dialog was closed');
+  //   });
+  // }
 
-      });
+  // deleteData() {
+  //   this.ser.getData().subscribe((res) => {
+  //     console.log(res)
+  //     this.userData = res;
+  //   })
+  // }
 
-      console.log('The dialog was closed');
-    });
-  }
+  // onDelete(dt: any) {
+  //   this.ser.deleteData(dt.id).subscribe((res) => {
+  //     alert('Delete Data');
 
-  deleteData() {
-    this.ser.getData().subscribe((res) => {
-      console.log(res)
-      this.userData = res;
-    })
-  }
+  //     this.ser.getData().subscribe((res) => {
+  //       console.log(res);
+  //       this.delete = res;
 
-  onDelete(dt: any) {
-    this.ser.deleteData(dt.id).subscribe((res) => {
-      alert('Delete Data');
+  //       if (this.delete.length > 0) {
+  //         this.deleteData()
+  //       }
+  //     })
+  //   })
+  // }
 
-      this.ser.getData().subscribe((res) => {
-        console.log(res);
-        this.delete = res;
+  // get f() {
+  //   return this.myForm.controls;
+  // }
 
-        if (this.delete.length > 0) {
-          this.deleteData()
-        }
-      })
-    })
-  }
+  // onSubmit() {
+  //   this.isSubmitted = true;
+  //   console.log(this.myForm.value);
+  //   this.myForm.reset(this.myForm.value);
+  // }
 
-  onSubmit() {
-    this.ser.PostData(this.myForm.value).subscribe((res) => {
-      console.log(res);
-      this.isSubmitted = true;
-      if (res) {
-        this.deleteData()
-      }
-    })
-  }
+  // onClose() {
+  //   Swal.fire({
+  //     title: "Are you  want to Close!",
+  //     text: "Do you want to continue",
+  //     icon: "warning",
 
-  get f() {
-    return this.myForm.controls;
-  }
+  //     showCancelButton: true,
+  //     confirmButtonText: 'Yes',
+  //     cancelButtonText: 'No',
+  //   }).then((result) => {
+  //     if (result.value == true) {
+  //       this.modalForm = false;
+  //     }
+  //   })
+  // }
+
+  // submit(myuser: any) {
+  //   // console.log(myuser.value);
+  //   this.userlist.push(myuser.value);
+  //   myuser.value = " ";
+  // }
+
+  // submit() {
+  //   if (this.myForm.valid) {
+  //     this.isSubmitted = true;
+  //     console.log(this.myForm.value);
+  //     let allData = this.myForm.value;
+  //     console.log(allData);
+
+  //     Swal.fire({
+  //       title: "Thank You",
+  //       text: "Data Submitted Successfully",
+  //       icon: "success",
+  //       confirmButtonText: 'Okay',
+  //     })
+  //   } else {
+  //     Swal.fire({
+  //       title: "Sorry... ",
+  //       text: "Please Enter All Fields",
+  //       icon: "error",
+  //       confirmButtonText: 'Okay'
+  //     })
+  //   }
+  //   if (this.myForm.invalid) {
+  //     return;
+  //   }
+  // }
+
+  // Landing: Landing[] = [
+  //   {
+  //     firstName: 'Kajal',
+  //     email: 'kajal@yopmail.com',
+  //     enquirytype: 'one',
+  //     center: 'pune',
+  //     lastName: 'Parchande',
+  //     mobile: '7218176602',
+  //     enquirysource: 'source1',
+  //     course: 'BE',
+  //     remark: 'Vary Good'
+  //   },
+  //   {
+  //     firstName: 'Vikas',
+  //     email: 'vikas@yopmail.com',
+  //     enquirytype: 'Two',
+  //     center: 'Mumbai',
+  //     lastName: 'waghmode',
+  //     mobile: '7218176602',
+  //     enquirysource: 'source2',
+  //     course: 'ME',
+  //     remark: 'Good'
+  //   },
+  //   {
+  //     firstName: 'Narayan',
+  //     email: 'narayan@yopmail.com',
+  //     enquirytype: 'one',
+  //     center: 'pune',
+  //     lastName: 'Sargar',
+  //     mobile: '7218176602',
+  //     enquirysource: 'source3',
+  //     course: 'MBA',
+  //     remark: 'Vary Good'
+  //   },
+  //   {
+  //     firstName: 'Ajay',
+  //     email: 'ajay@yopmail.com',
+  //     enquirytype: 'one',
+  //     center: 'Mumbai',
+  //     lastName: 'waghmode',
+  //     mobile: '7218176602',
+  //     enquirysource: 'source1',
+  //     course: 'ME',
+  //     remark: 'Good'
+  //   },
+  //   {
+  //     firstName: 'Sachin',
+  //     email: 'sachin@yopmail.com',
+  //     enquirytype: 'Two',
+  //     center: 'Bengalore',
+  //     lastName: 'waghmode',
+  //     mobile: '7218176602',
+  //     enquirysource: 'source1',
+  //     course: 'BE',
+  //     remark: 'Vary Good'
+  //   }
+  // ];
 }
+
+@Component({
+  selector: 'dialog-content-example-dialog',
+  templateUrl: 'dialog.html',
+})
+export class DialogContentExampleDialog { }

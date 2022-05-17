@@ -1,1 +1,111 @@
-<p>online works!</p>
+<div class="d-flex">
+    <div class="d-flex">
+        <h1 class="modal-title">Quick Data</h1>
+    </div>
+    <div class="modal-icon">
+        <a class="modal-icon" (click)="onClose()"><i class="colse bi bi-x"></i></a>
+    </div>
+</div>
+<div>
+    <form class="example-form" #myuser [formGroup]="myForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+            <div class="col-lg-6 col-md-6">
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>First Name</mat-label>
+                    <input matInput formControlName="firstName" placeholder="First Name"
+                        [ngClass]="{ 'is-invalid': isSubmitted && firstName.errors }">
+                    <mat-error *ngIf="firstName.invalid">First name is required.</mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Email</mat-label>
+                    <input matInput formControlName="email" placeholder="Ex. pat@example.com"
+                        [ngClass]="{ 'is-invalid': isSubmitted && email.errors }">
+                    <mat-error *ngIf="email.invalid">Email is required.</mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Enquiry Type</mat-label>
+                    <mat-select formControlName="enquirytype" name="Enquiry">
+                        <mat-option *ngFor="let Enquiry of Enquirys" [value]="Enquiry">
+                            {{Enquiry}}
+                        </mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="isSubmitted && enquirytype.errors">Enquiry is required.</mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Center</mat-label>
+                    <mat-select formControlName="center" name="Center">
+                        <mat-option *ngFor="let Center of Centers" [value]="Center">
+                            {{Center}}
+                        </mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="isSubmitted && center.errors">
+                        Center is required.
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Last Name</mat-label>
+                    <input matInput formControlName="lastName" placeholder="Last Name"
+                        [ngClass]="{ 'is-invalid': isSubmitted && lastName.errors }">
+                    <mat-error *ngIf="lastName.invalid">Last name is required.</mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Mobile</mat-label>
+                    <input matInput formControlName="mobile" placeholder="Mobile">
+                    <mat-error *ngIf="isSubmitted && center.errors">
+                        Mobile is required.
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Enquiry Source</mat-label>
+                    <mat-select formControlName="enquirysource" name="Source">
+                        <mat-option *ngFor="let Source of Sources" [value]="Source">
+                            {{Source}}
+                        </mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="isSubmitted && center.errors">
+                        Source is required.
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Course</mat-label>
+                    <mat-select formControlName="course" name="Course">
+                        <mat-option *ngFor="let Course of Courses" [value]="Course">
+                            {{Course}}
+                        </mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="isSubmitted && center.errors">
+                        Course is required.
+                    </mat-error>
+                </mat-form-field>
+            </div>
+
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Remarks</mat-label>
+                <input matInput formControlName="remark" placeholder="Remarks">
+                <mat-error *ngIf="isSubmitted && center.errors">
+                    Remarks is required.
+                </mat-error>
+            </mat-form-field>
+
+            <section class="example-section">
+                <mat-checkbox class="example-margin">Send Welcome Email</mat-checkbox>
+                <mat-checkbox class="example-margin mx-2">Send Welcome SMS</mat-checkbox>
+            </section>
+        </div>
+        <div align="end">
+            <button class="btn btn-success" (click)="submit(myuser)">SAVE & CLOSE</button>
+            <button class="btn btn-primary mx-2">SAVE & Add More</button>
+        </div>
+    </form>
+</div>
+<form>
+    <input type="text">
+</form>

@@ -2,7 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DataService } from '../data.service';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-edit',
@@ -40,13 +40,11 @@ export class EditComponent implements OnInit {
   onSubmit() {
     console.log(this.data.data.id, this.myForm1.value);
     this.ser.editData(this.data.data.id, this.myForm1.value).subscribe((res) => {
-      debugger;
+      // debugger;
       if(res ){
-      debugger;
+      // debugger;
         this.dialogRef.close(res);
       }
-
-     
 
       // this.ser.editData(this.data.id, this.myForm1.value).subscribe({
       //   next:(res)=>{
@@ -58,10 +56,8 @@ export class EditComponent implements OnInit {
 
       // console.log(res);
       // if (res) {
-
       // }
       // this.route.navigate(['/landing']);
-
     })
   }
 }

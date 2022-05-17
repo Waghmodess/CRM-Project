@@ -1,47 +1,132 @@
-<div class="container">
-  <div>
-    <nav class="navbar navbar-expand-lg navbar- navbar-light">
-      <div class="container-fluid">
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <div class="container">
-            <ul class="nav" style="border-bottom: 3px solid orange;">
-              <li class="nav-item " routerLinkActive="Active rounded">
-                <a class="nav-link px-4 active" routerLink="landing">All</a>
-              </li>
-              <li class="nav-item" routerLinkActive="Active rounded">
-                <a class="nav-link px-4" routerLink="post">Fresh</a>
-              </li>
-              <li class="nav-item" routerLinkActive="Active rounded">
-                <a class="nav-link px-4 active" routerLink="edit">Follow-up</a>
-              </li>
-              <li class="nav-item" routerLinkActive="Active rounded">
-                <a class="nav-link px-4 active" routerLink="walkin">Walkin</a>
-              </li>
-              <li class="nav-item" routerLinkActive="Active rounded">
-                <a class="nav-link px-4 active" routerLink="in-future">In-Future</a>
-              </li>
-              <li class="nav-item" routerLinkActive="Active rounded">
-                <a class="nav-link px-4 active" routerLink="enrolled">Enrolled</a>
-              </li>
-              <li class="nav-item" routerLinkActive="Active rounded">
-                <a class="nav-link px-4 active" routerLink="closed">Closed</a>
-              </li>
-              <li class="nav-item" routerLinkActive="Active rounded">
-                <a class="nav-link px-4 active" routerLink="referred">Referred From Me</a>
-              </li>
-              <li class="nav-item" routerLinkActive="Active rounded">
-                <a class="nav-link px-4 active" routerLink="re-enquried">Re-Enquried</a>
-              </li>
-              <li class="nav-item" routerLinkActive="Active rounded">
-                <a class="nav-link px-4 active" routerLink="online">Online</a>
-              </li>
-            </ul>
+<div class="card">
+  <div class="card-body">
+    <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+      <mat-icon *ngIf="!sidenav.opened">
+        menu
+      </mat-icon>
+      <mat-icon *ngIf="sidenav.opened" class="mx-2">
+        close
+      </mat-icon>
+    </button>
+
+    <mat-sidenav-container>
+      <mat-sidenav #sidenav="matSidenav">
+        <div>
+          <h2>Lead List</h2>
+          <ul class="nav">
+            <li class="nav-item" routerLinkActive="Active rounded">
+              <a class="nav-link pt-3 active" routerLink="my-followups"> My Followups</a>
+            </li>
+            <li class="nav-item" routerLinkActive="Active rounded">
+              <a class="nav-link pt-3 active" routerLink="chat-list">
+                <i class="icon fa-solid fa-bars  me-3"></i>Chat List</a>
+            </li>
+            <li class="nav-item" routerLinkActive="Active rounded">
+              <a class="nav-link pt-3 active" routerLink="failed-leads">
+                <i class="fa-solid fa-user-xmark me-3"></i> Failed Leads</a>
+            </li>
+            <li class="nav-item" routerLinkActive="Active rounded">
+              <a class="nav-link pt-3 active" routerLink="marketing">
+                <i class="icon bi bi-megaphone-fill me-3"></i> Marketing</a>
+            </li>
+            <li class="nav-item" routerLinkActive="Active rounded">
+              <a class="nav-link pt-3 active" routerLink="drip-marketing">
+                <i class="fa-solid fa-spa me-3"></i> Drip Marketing</a>
+            </li>
+            <li class="nav-item" routerLinkActive="Active rounded">
+              <a class="nav-link pt-3 active" routerLink="reports">
+                <i class="fa-solid fa-chart-area me-3"></i> Reports</a>
+            </li>
+            <li class="nav-item" routerLinkActive="Active rounded">
+              <a class="nav-link pt-3 active" routerLink="settings">
+                <i class="fa-solid fa-gear me-3"></i> Settings</a>
+            </li>
+          </ul>
+        </div>
+      </mat-sidenav>
+
+      <mat-sidenav-content>
+        <div class="content">
+          <nav class="navbar navbar-expand-sm navbar-light">
+            <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent"> -->
+            <div class="container">
+              <ul class="nav list-inline" style="border-bottom: 2px solid orange;">
+                <li class="nav-item " routerLinkActive="Active rounded">
+                  <a class="nav-link active" routerLink="landing">All</a>
+                </li>
+                <li class="nav-item" routerLinkActive="Active rounded">
+                  <a class="nav-link active" routerLink="post">Fresh</a>
+                </li>
+                <li class="nav-item" routerLinkActive="Active rounded">
+                  <a class="nav-link active" routerLink="edit">Follow-up</a>
+                </li>
+                <li class="nav-item" routerLinkActive="Active rounded">
+                  <a class="nav-link active" routerLink="walkin">Walkin</a>
+                </li>
+                <li class="nav-item" routerLinkActive="Active rounded">
+                  <a class="nav-link active" routerLink="in-future">In-Future</a>
+                </li>
+                <li class="nav-item" routerLinkActive="Active rounded">
+                  <a class="nav-link active" routerLink="enrolled">Enrolled</a>
+                </li>
+                <li class="nav-item" routerLinkActive="Active rounded">
+                  <a class="nav-link active" routerLink="closed">Closed</a>
+                </li>
+                <li class="nav-item" routerLinkActive="Active rounded">
+                  <a class="nav-link active" routerLink="referred">Referred From Me</a>
+                </li>
+                <li class="nav-item" routerLinkActive="Active rounded">
+                  <a class="nav-link active" routerLink="re-enquried">Re-Enquried</a>
+                </li>
+                <li class="nav-item" routerLinkActive="Active rounded">
+                  <a class="nav-link active" routerLink="online">Online</a>
+                </li>
+              </ul>
+            </div>
+            <!-- </div> -->
+          </nav>
+
+
+
+          <!-- <nav class="navbar navbar-expand-md navbar-light bg-light">
+              <ul class="navbar-nav" style="border-bottom: 2px solid orange;">
+                <li class="nav-item " routerLinkActive="Active rounded">
+                  <a class="nav-link active mx-2" routerLink="landing">All</a>
+                </li>
+                <li class="nav-item" routerLinkActive="Active rounded">
+                  <a class="nav-link active mx-2" routerLink="post">Fresh</a>
+                </li>
+                <li class="nav-item" routerLinkActive="Active rounded">
+                  <a class="nav-link active mx-2" routerLink="edit">Follow-up</a>
+                </li>
+                <li class="nav-item" routerLinkActive="Active rounded">
+                  <a class="nav-link active mx-2" routerLink="walkin">Walkin</a>
+                </li>
+                <li class="nav-item" routerLinkActive="Active rounded">
+                  <a class="nav-link active mx-2" routerLink="in-future">In-Future</a>
+                </li>
+                <li class="nav-item" routerLinkActive="Active rounded">
+                  <a class="nav-link active mx-2" routerLink="enrolled">Enrolled</a>
+                </li>
+                <li class="nav-item" routerLinkActive="Active rounded">
+                  <a class="nav-link active mx-2" routerLink="closed">Closed</a>
+                </li>
+                <li class="nav-item" routerLinkActive="Active rounded">
+                  <a class="nav-link active mx-2" routerLink="referred">Referred From Me</a>
+                </li>
+                <li class="nav-item" routerLinkActive="Active rounded">
+                  <a class="nav-link active mx-2" routerLink="re-enquried">Re-Enquried</a>
+                </li>
+                <li class="nav-item" routerLinkActive="Active rounded">
+                  <a class="nav-link active mx-2" routerLink="online">Online</a>
+                </li>
+              </ul>
+          </nav> -->
+          <div>
+            <router-outlet></router-outlet>
           </div>
         </div>
-      </div>
-    </nav>
-    <div>
-      <router-outlet></router-outlet>
-    </div>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
   </div>
- 
+</div>

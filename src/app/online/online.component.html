@@ -7,7 +7,7 @@
     </div>
 </div>
 <div>
-    <form class="example-form" #myuser [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <form class="example-form" #myuser [formGroup]="addData" (ngSubmit)="onSubmit()">
         <div class="row">
             <div class="col-lg-6 col-md-6">
                 <mat-form-field class="example-full-width" appearance="fill">
@@ -26,19 +26,19 @@
 
                 <mat-form-field class="example-full-width" appearance="fill">
                     <mat-label>Enquiry Type</mat-label>
-                    <mat-select formControlName="enquirytype" name="Enquiry">
+                    <mat-select formControlName="enquiryType" name="Enquiry">
                         <mat-option *ngFor="let Enquiry of Enquirys" [value]="Enquiry">
-                            {{Enquiry}}
+                            {{enquiry}}
                         </mat-option>
                     </mat-select>
-                    <mat-error *ngIf="isSubmitted && enquirytype.errors">Enquiry is required.</mat-error>
+                    <mat-error *ngIf="isSubmitted && enquiryType.errors">Enquiry is required.</mat-error>
                 </mat-form-field>
 
                 <mat-form-field class="example-full-width" appearance="fill">
                     <mat-label>Center</mat-label>
                     <mat-select formControlName="center" name="Center">
                         <mat-option *ngFor="let Center of Centers" [value]="Center">
-                            {{Center}}
+                            {{center}}
                         </mat-option>
                     </mat-select>
                     <mat-error *ngIf="isSubmitted && center.errors">
@@ -64,9 +64,9 @@
 
                 <mat-form-field class="example-full-width" appearance="fill">
                     <mat-label>Enquiry Source</mat-label>
-                    <mat-select formControlName="enquirysource" name="Source">
+                    <mat-select formControlName="enquirySource" name="Source">
                         <mat-option *ngFor="let Source of Sources" [value]="Source">
-                            {{Source}}
+                            {{source}}
                         </mat-option>
                     </mat-select>
                     <mat-error *ngIf="isSubmitted && center.errors">
@@ -78,7 +78,7 @@
                     <mat-label>Course</mat-label>
                     <mat-select formControlName="course" name="Course">
                         <mat-option *ngFor="let Course of Courses" [value]="Course">
-                            {{Course}}
+                            {{course}}
                         </mat-option>
                     </mat-select>
                     <mat-error *ngIf="isSubmitted && center.errors">
@@ -101,11 +101,8 @@
             </section>
         </div>
         <div align="end">
-            <button class="btn btn-success" (click)="submit(myuser)">SAVE & CLOSE</button>
-            <button class="btn btn-primary mx-2">SAVE & Add More</button>
+            <button class="btn btn-success" (click)="submit(myuser)">Save & Close</button>
+            <button class="btn btn-primary mx-2">Save & Add More</button>
         </div>
     </form>
 </div>
-<form>
-    <input type="text">
-</form>

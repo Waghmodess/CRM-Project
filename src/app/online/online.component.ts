@@ -10,25 +10,25 @@ import Swal from 'sweetalert2';
   styleUrls: ['./online.component.css']
 })
 export class OnlineComponent implements OnInit {
-  myForm: FormGroup;
+  addData: FormGroup;
   modalForm = true;
   isSubmitted: boolean = false;
   selectedValue: string;
-  Enquirys = ['One', 'Two', 'Three'];
-  Centers = ['Pune', 'Mumbai', 'Bengaluru'];
-  Sources = ['Source1', 'Source2', 'Source3'];
-  Courses = ['BE', 'ME', 'MBA'];
+  enquirys = ['One', 'Two', 'Three'];
+  centers = ['Pune', 'Mumbai', 'Bengaluru'];
+  sources = ['Source1', 'Source2', 'Source3'];
+  courses = ['BE', 'ME', 'MBA'];
   firstName: FormControl;
   email: FormControl;
-  enquirytype: FormControl;
+  enquiryType: FormControl;
   center: FormControl;
   lastName: FormControl;
   mobile: FormControl;
-  enquirysource: FormControl;
+  enquirySource: FormControl;
   course: FormControl;
   remark: FormControl;
   userData: any;
-  userlist: any = [];
+  userList: string[];
 
   @Output() submit1: EventEmitter<any> = new EventEmitter();
 
@@ -38,7 +38,7 @@ export class OnlineComponent implements OnInit {
     this.createFormControls();
     this.createForm();
     debugger;
-    this.submit1.emit(this.userlist);
+    this.submit1.emit(this.userList);
 
   }
   createFormControls() {
@@ -52,7 +52,7 @@ export class OnlineComponent implements OnInit {
       Validators.email,
     ]);
 
-    this.enquirytype = new FormControl("", [
+    this.enquiryType = new FormControl("", [
       Validators.required,
     ]);
 
@@ -70,7 +70,7 @@ export class OnlineComponent implements OnInit {
       Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$')
     ]);
 
-    this.enquirysource = new FormControl("", [
+    this.enquirySource = new FormControl("", [
       Validators.required,
     ]);
 
@@ -84,14 +84,14 @@ export class OnlineComponent implements OnInit {
   }
 
   createForm() {
-    this.myForm = new FormGroup({
+    this.addData = new FormGroup({
       firstName: this.firstName,
       email: this.email,
-      enquirytype: this.enquirytype,
+      enquiryType: this.enquiryType,
       center: this.center,
       lastName: this.lastName,
       mobile: this.mobile,
-      enquirysource: this.enquirysource,
+      enquirySource: this.enquirySource,
       course: this.course,
       remark: this.remark
     })
@@ -100,8 +100,8 @@ export class OnlineComponent implements OnInit {
 
   onSubmit() {
     this.isSubmitted = true;
-    if (this.myForm.valid) {
-      console.log(this.myForm.value);
+    if (this.addData.valid) {
+      console.log(this.addData.value);
 
       Swal.fire({
         title: "Thank You",
@@ -109,24 +109,24 @@ export class OnlineComponent implements OnInit {
         icon: "success",
         confirmButtonText: 'Okay',
       })
-      this.myForm.reset();
+      this.addData.reset();
     } else {
       return;
     }
   }
   submit(myuser: any) {
-    console.log(this.myForm.value);
-    // let userlist: any = [];
-    // this.userlist.push(this.myForm.value);
+    console.log(this.addData.value);
+    // let userList: any = [];
+    // this.userList.push(this.addData.value);
     // myuser.value = " ";
-    // console.log(userlist);
+    // console.log(userList);
 
-    if (this.myForm.valid) {
+    if (this.addData.valid) {
       this.isSubmitted = true;
-      console.log(this.myForm.value);
+      console.log(this.addData.value);
       this.dialogRef.close();
 
-      // let userData = this.myForm.value;
+      // let userData = this.addData.value;
       // console.log(userData);
       // this.dialogRef.close();
 
@@ -145,7 +145,7 @@ export class OnlineComponent implements OnInit {
         confirmButtonText: 'Okay'
       })
     }
-    if (this.myForm.invalid) {
+    if (this.addData.invalid) {
       return;
     }
   }
@@ -167,7 +167,7 @@ export class OnlineComponent implements OnInit {
     })
   }
 
-  get f() {
-    return this.myForm.controls;
+  get FormControl() {
+    return this.addData.controls;
   }
 }

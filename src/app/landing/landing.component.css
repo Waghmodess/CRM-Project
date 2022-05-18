@@ -1,4 +1,4 @@
-.font {
+.accordion-body {
     font-size: 15px;
     background-color: floralwhite;
     padding-left: 3%;
@@ -16,12 +16,12 @@
     font-size: smaller;
 }
 
-.icon {
+.icon-top {
     color: darkorange;
     padding-left: 24px;
 }
 
-.icon1 {
+.icon {
     color: darkorange;
     padding-left: 18px;
 }
@@ -30,23 +30,22 @@
     font-size: 40px;
 }
 
-.icons {
+.addData-icon {
     color: darkorange;
     margin-top: 230px;
     position: absolute;
 }
 
-.icons1 {
+.edit-icon {
     color: darkorange;
     font-size: 40px;
     margin-top: 245px;
     position: relative;
 }
 
-.para {
+.title {
     font-size: 14px;
 }
-
 
 .side-button {
     display: flex;
@@ -56,25 +55,13 @@
     margin-bottom: 22px;
 }
 
-.mat-badge {
-    position: absolute;
-}
-
-.mat-badge1 {
-    position: absolute;
-}
-
+.mat-badge,
+.mat-badge1,
 .mat-badge2 {
     position: absolute;
 }
 
-/* .modal-content{
-    width: 150%;
-} */
-.form-control {
-    background-color: #f8f9fa;
-}
-
+.form-control,
 .form-select {
     background-color: #f8f9fa;
 }
@@ -83,28 +70,19 @@
     background-color: seashell;
 }
 
-.colse {
-    color: black;
-    font-size: 30px;
-}
-
 
 @media(min-width:321px) and (max-width:768px) {
-    .table {
-        font-size: smaller;
-    }
-
-    .icon {
+    .icon-top {
         color: darkorange;
         padding-left: 19px;
     }
 
-    .icon1 {
+    .icon {
         color: darkorange;
         padding-left: 11px;
     }
 
-    .names {
+    .username {
         font-size: small;
     }
 
@@ -112,18 +90,14 @@
         font-size: 12px;
     }
 
-    .btn {
-        font-size: inherit
-    }
-
-    .icons {
+    .addData-icon {
         color: darkorange;
         margin-left: -10px;
         margin-top: 200px;
         position: absolute;
     }
 
-    .icons1 {
+    .edit-icon {
         color: darkorange;
         font-size: 40px;
         margin-left: -10px;
@@ -139,12 +113,12 @@
         margin-bottom: 280px;
     }
 
-    .font {
+    .accordion-body {
         background-color: floralwhite;
         padding-left: 3%;
     }
 
-    .para {
+    .title {
         font-size: 13px;
     }
 
@@ -152,43 +126,3 @@
         width: 100%;
     }
 }
-
-@media(max-width:320px) {
-    .table {
-        width: 320px;
-    }
-
-    .modal-content {
-        width: 100%;
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* @media(min-width:1024px) and (max-width:1439px) {
-    .icon {
-        color: darkorange;
-        padding-left: 18px;
-    }
-} */

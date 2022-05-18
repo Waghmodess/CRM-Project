@@ -5,9 +5,6 @@ import { Router } from '@angular/router';
 import { DataService } from '../data.service';
 import { EditComponent } from '../edit/edit.component'
 import 'sweetalert2/src/sweetalert2.scss'
-import Swal from 'sweetalert2'
-import { OnlineComponent } from '../online/online.component';
-import Landing from '../data';
 
 @Component({
   selector: 'app-landing',
@@ -19,22 +16,16 @@ export class LandingComponent implements OnInit {
   myForm: FormGroup;
   public delete: any;
   public modalForm = true;
-  names: any = ['Enrolled', 'Not Called', 'ABC', 'XYZ'];
+  names: string[] = ['Enrolled', 'Not Called', 'ABC', 'XYZ'];
   isSubmitted: boolean = false;
   allData: any;
-  userlist: any[];
+  userList: string[];
 
 
 
 
   constructor(private ser: DataService, private rout: Router,
     private fb: FormBuilder, public dialog: MatDialog) {
-    // this.ser.getData().subscribe((res) => {
-    //   console.log(res)
-    //   this.userData = res;
-    // })
-
-    // this.deleteData()
   }
 
   openDialog1() {
@@ -49,18 +40,18 @@ export class LandingComponent implements OnInit {
     this.myForm = this.fb.group({
       firstName: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
-      enquirytype: ['', [Validators.required]],
+      enquiryType: ['', [Validators.required]],
       center: ['', [Validators.required]],
       lastName: ['', [Validators.required]],
       mobile: ['', [Validators.required, Validators.maxLength(10)]],
-      enquirysource: ['', [Validators.required]],
+      enquirySource: ['', [Validators.required]],
       course: ['', [Validators.required]],
       remark: ['', [Validators.required]],
     })
   }
 
-  // submit(userlist: any) {
-  //   this.userlist
+  // submit(userList: any) {
+  //   this.userList
   // }
 
   // onEdit(data: any) {
@@ -127,7 +118,7 @@ export class LandingComponent implements OnInit {
 
   // submit(myuser: any) {
   //   // console.log(myuser.value);
-  //   this.userlist.push(myuser.value);
+  //   this.userList.push(myuser.value);
   //   myuser.value = " ";
   // }
 
@@ -161,55 +152,55 @@ export class LandingComponent implements OnInit {
   //   {
   //     firstName: 'Kajal',
   //     email: 'kajal@yopmail.com',
-  //     enquirytype: 'one',
+  //     enquiryType: 'one',
   //     center: 'pune',
   //     lastName: 'Parchande',
   //     mobile: '7218176602',
-  //     enquirysource: 'source1',
+  //     enquirySource: 'source1',
   //     course: 'BE',
   //     remark: 'Vary Good'
   //   },
   //   {
   //     firstName: 'Vikas',
   //     email: 'vikas@yopmail.com',
-  //     enquirytype: 'Two',
+  //     enquiryType: 'Two',
   //     center: 'Mumbai',
   //     lastName: 'waghmode',
   //     mobile: '7218176602',
-  //     enquirysource: 'source2',
+  //     enquirySource: 'source2',
   //     course: 'ME',
   //     remark: 'Good'
   //   },
   //   {
   //     firstName: 'Narayan',
   //     email: 'narayan@yopmail.com',
-  //     enquirytype: 'one',
+  //     enquiryType: 'one',
   //     center: 'pune',
   //     lastName: 'Sargar',
   //     mobile: '7218176602',
-  //     enquirysource: 'source3',
+  //     enquirySource: 'source3',
   //     course: 'MBA',
   //     remark: 'Vary Good'
   //   },
   //   {
   //     firstName: 'Ajay',
   //     email: 'ajay@yopmail.com',
-  //     enquirytype: 'one',
+  //     enquiryType: 'one',
   //     center: 'Mumbai',
   //     lastName: 'waghmode',
   //     mobile: '7218176602',
-  //     enquirysource: 'source1',
+  //     enquirySource: 'source1',
   //     course: 'ME',
   //     remark: 'Good'
   //   },
   //   {
   //     firstName: 'Sachin',
   //     email: 'sachin@yopmail.com',
-  //     enquirytype: 'Two',
+  //     enquiryType: 'Two',
   //     center: 'Bengalore',
   //     lastName: 'waghmode',
   //     mobile: '7218176602',
-  //     enquirysource: 'source1',
+  //     enquirySource: 'source1',
   //     course: 'BE',
   //     remark: 'Vary Good'
   //   }
